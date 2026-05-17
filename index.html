@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>El mejor padre del mundo</title>
+    <style>
+        body {
+            /* Fondo difuminado con los colores del Barcelona */
+            background: linear-gradient(135deg, #004d98, #a50044);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        .header-section {
+            z-index: 5;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #edbb00; /* Amarillo/Dorado del Barça */
+            font-size: 28px;
+            margin: 0 0 5px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: #ffffff; /* Blanco limpio */
+            font-size: 20px;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Tu tarjeta blanca original intacta */
+        .story-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 25px;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+            z-index: 5;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+
+        .story-section {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .story-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-title {
+            color: #ff4d6d; /* Rosa original de tus títulos */
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .story-text {
+            color: #5c4d52; /* Color original de tus textos */
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        button {
+            background-color: #ff4d6d; /* Tu botón rosa original */
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+            cursor: pointer;
+            z-index: 5;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        /* Estrellas optimizadas para que no traben el procesador del móvil */
+        .barca-star {
+            position: fixed;
+            color: inherit;
+            font-size: 24px;
+            bottom: -50px;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.5;
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-120vh) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>¡Feliz Cumpleaños 50 años!</h1>
+        <h2>Para el mayor fan del barcelona 💖</h2>
+    </div>
+
+    <div class="story-card">
+        <div class="story-section">
+            <div class="story-title">✨ Que paso desde que llegaste?</div>
+            <p class="story-text">Llegaste a mi vida cuando tenía 3 años. Desde ahi has siempre has dado la cara por mi , por mi educación y por mi familia.. pero despues de todo tu eres mi familia.</p>
+        </div>
+
+        <div class="story-section">
+            <div class="story-title">😜 El dia a dia con un catalan</div>
+            <p class="story-text">Es verdad que tenemos nuestros piques y nuestras cosas, pero eso es lo que lo hace divertido Siempre has querido darme una educación buena y diferente a la de los demás, basándote en las bromas y las risa.</p>
+        </div>
+
+        <div class="story-section">
+            <div class="story-title">🤝 Quien te limpiara el culo de mayor?</div>
+            <p class="story-text">Ahora tú cumples 50 años y yo tengo 15. Pero quiero que sepas una cosa: cuando yo tenga 30 y tú ya estés viejito, ten por seguro que tendrás a alguien a tu lado que te cuide (osea yo)</p>
+        </div>
+    </div>
+
+    <button onclick="alert('Bueno basicamente queria decirte que pese a que no eres mi padre d sangre siempre te has encargado d mi desde que soy joven, y aunque me cueste demostrarlo o decirlo te quiero mucho y valoro mucho, because siempre cubriste cada necesidad mia y actualmente d mi hermana deborah')">Toca aquí, Mario 🎁</button>
+
+    <script>
+        const barcaColors = ['#004d98', '#a50044', '#edbb00'];
+        
+        function createStar() {
+            const star = document.createElement('div');
+            star.classList.add('barca-star');
+            star.innerHTML = '★'; 
+            
+            star.style.left = Math.random() * 95 + 'vw';
+            
+            const size = Math.random() * 15 + 15;
+            star.style.fontSize = size + 'px';
+            
+            const randomColor = barcaColors[Math.floor(Math.random() * barcaColors.length)];
+            star.style.color = randomColor;
+            
+            star.style.animationDuration = Math.random() * 4 + 5 + 's';
+            
+            document.body.appendChild(star);
+            
+            setTimeout(() => {
+                star.remove();
+            }, 8000);
+        }
+
+        // Ejecutar con retraso controlado para evitar bloqueos del editor
+        setInterval(createStar, 1200);
+    </script>
+
+</body>
+</html>
